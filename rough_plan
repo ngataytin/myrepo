@@ -1,0 +1,63 @@
+--------------------------------------------------------------------------
+[==============================ATK. GAUGE================================]
+
+    ||									                                              ||
+    ||	  ________							                                      ||
+    ||	  |      |	              --------		    [char3.B3]		      || 
+    ||	  |Enemy |	              |Sp.Atk|	     		  		            ||
+    ||	  |______|                |      |--[char1.B1]    [char4.B4]  ||
+    ||		                        |______|     				                ||
+    ||						                                   [char2.B2]		    ||
+    H.E									                                              HP
+
+--------------------------------------------------------------------------
+
+H.P = Player health
+H.E = Enemy health
+ATK. GAUGE = Attack Gauge
+
+________
+|      |			
+|Enemy | = Enemy Unit	     		  
+|______|
+
+Type : indirect interative
+-max = 6, min = 1
+-total (H.E) = increment (op.) count(Enemy)
+		
+..........................................................................
+
+[char#.B#] = character in the party
+
+Type : direct interative (button)
+-max = 4, min = 1.
+-total (H.P) = increment (op.) count(characters)
+-gauge decremnt (GD) default attack = 5
+
+&&
+_________
+|Sp.Atk	| 
+|	      |
+|_______|
+
+Type : direct interative (INHERITED)
+-max = 4 , min = 0
+-List item with float or int value (char#.B#.SPList.(int or float))
+
+
+...........................................................................
+[======] =  Attack gauge
+
+-decrement on turn
+-accessed by B#.GD.
+-accessed by char#.B#.SpList.someValue
+
+...........................................................................
+
+||
+||  = Health bar for both H.P and H.E.
+||
+||
+
+
+
